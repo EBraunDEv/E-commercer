@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import clsx from 'clsx'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
+export const metadata= {
   title: 'E-Commerce',
   description: 'E-Commerce- feito em Next.js + Typescript + TailwindCSS,', 
 }
@@ -18,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className, 'bg-slate-700')}>
        <Navbar/>
-        <main className='bg-slate-700 h-screen p-16'>
+        <main className=' h-screen p-16'>
         {children}
         </main>
         </body>
